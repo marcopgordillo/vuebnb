@@ -1,0 +1,42 @@
+version: '3.3'
+
+services:
+   db:
+     image: marcopgordillo/mariadb:latest
+     volumes:
+       - "./db-data:/var/lib/mysql"
+     networks:
+       - backend
+     restart: always
+     environment:
+       MYSQL_ROOT_PASSWORD: wordpress123
+       MYSQL_DATABASE: wordpress
+       MYSQL_USER: wordpress
+       MYSQL_PASSWORD: wordpress
+
+   apache:
+     depends_on:
+       - db
+     image: marcopgordillo/apache:latest
+     ports:
+       - "8001:80"
+     restart: always
+     volumes:
+       - ./:/var/www/html
+       - ./apache-config/httpd.conf:/etc/apache2/httpd.conf
+       - ./apache-config/apache-default.conf:/etc/apache2/sites-available/000-default.conf
+     environment:
+       WORDPRESS_DB_HOST: db:3306
+       WORDPRESS_DB_USER: wordpress
+       WORDPRESS_DB_PASSWORD: wordpress
+       WORDPRESS_DB_NAME: wordpress
+     networks:
+       - frontend
+       - backend
+
+volumes:
+    db:
+
+networks:
+  frontend:
+  backend:
