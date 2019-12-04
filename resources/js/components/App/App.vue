@@ -12,10 +12,7 @@
       <hr />
       <div class="about">
         <h3>About this listing</h3>
-        <p :class="{ contracted }">{{ about }}</p>
-        <button v-if="contracted" v-on:click="contracted = false" class="more">
-          <font-awesome-icon icon="plus" size="xs" /> More
-        </button>
+        <expandable-text>{{ about }}</expandable-text>
       </div>
       <div class="lists">
         <feature-list title="Amenities" :items="amenities">

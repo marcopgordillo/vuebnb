@@ -14,25 +14,4 @@
 .about {
   margin: 2em 0;
   h3 {font-size: 22px;}
-  p {
-    white-space: pre-wrap;
-    &.contracted {
-      height: 250px;
-      overflow: hidden;
-    }
-  }
-  button.more {
-    background: transparent;
-    border: 0;
-    color: #008489;
-    padding: 0;
-    font-size: 17px;
-    font-weight: bold;
-    &:hover,
-    &:focus,
-    &:active {
-      text-decoration: underline;
-      outline: none;
-    }
-  }
 }
