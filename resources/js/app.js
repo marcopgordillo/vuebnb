@@ -8,8 +8,13 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
-Vue.config.devtools = true;
 Vue.config.performance = true;
+
+if (process.env.MIX_ENV_MODE === 'production') {
+  Vue.config.devtools = false;
+  Vue.config.debug = false;
+  Vue.config.silent = true;
+}
 
 /**
  * The following block of code may be used to automatically register your

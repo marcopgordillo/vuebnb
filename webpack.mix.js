@@ -11,7 +11,10 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
+mix.js(mix.inProduction() ?
+  ['resources/js/app.js', 'resources/js/config/prod.env.js'] :
+  ['resources/js/app.js', 'resources/js/config/dev.env.js'],
+    'public/js')
   .sass('resources/sass/global.scss', 'public/css')
   .options({
     extractVueStyles: 'public/css/vue-style.css',

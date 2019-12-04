@@ -11754,9 +11754,7 @@ model = Object(_helpers__WEBPACK_IMPORTED_MODULE_1__["populateAmenitiesAndPrices
       modalOpen: false,
       ...data
     };*/
-    return Object.assign(model, {
-      contracted: true
-    });
+    return Object.assign(model, {}); // Spread model object to more props of data()
   },
   components: {
     ModalWindow: _ModalWindow__WEBPACK_IMPORTED_MODULE_2__["default"],
@@ -26016,8 +26014,9 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
-Vue.config.devtools = true;
 Vue.config.performance = true;
+
+if (false) {}
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -26028,6 +26027,7 @@ Vue.config.performance = true;
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 //Vue.component('app', require('./components/App/App.vue').default);
+
 
 
  //import ImageCarousel from './components/ImageCarousel/ImageCarousel.vue';
@@ -26172,15 +26172,14 @@ __webpack_require__.r(__webpack_exports__);
 /*!****************************************************!*\
   !*** ./resources/js/components/ExpandableText.vue ***!
   \****************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ExpandableText_vue_vue_type_template_id_8fc3ce28_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ExpandableText.vue?vue&type=template&id=8fc3ce28&scoped=true& */ "./resources/js/components/ExpandableText.vue?vue&type=template&id=8fc3ce28&scoped=true&");
 /* harmony import */ var _ExpandableText_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ExpandableText.vue?vue&type=script&lang=js& */ "./resources/js/components/ExpandableText.vue?vue&type=script&lang=js&");
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _ExpandableText_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _ExpandableText_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var _ExpandableText_vue_vue_type_style_index_0_id_8fc3ce28_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ExpandableText.vue?vue&type=style&index=0&id=8fc3ce28&lang=scss&scoped=true& */ "./resources/js/components/ExpandableText.vue?vue&type=style&index=0&id=8fc3ce28&lang=scss&scoped=true&");
+/* empty/unused harmony star reexport *//* harmony import */ var _ExpandableText_vue_vue_type_style_index_0_id_8fc3ce28_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ExpandableText.vue?vue&type=style&index=0&id=8fc3ce28&lang=scss&scoped=true& */ "./resources/js/components/ExpandableText.vue?vue&type=style&index=0&id=8fc3ce28&lang=scss&scoped=true&");
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -26212,7 +26211,7 @@ component.options.__file = "resources/js/components/ExpandableText.vue"
 /*!*****************************************************************************!*\
   !*** ./resources/js/components/ExpandableText.vue?vue&type=script&lang=js& ***!
   \*****************************************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -26691,6 +26690,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/config/dev.env.js":
+/*!****************************************!*\
+  !*** ./resources/js/config/dev.env.js ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+Vue.config.devtools = true;
+Vue.config.debug = true;
+Vue.config.silent = false;
+
+/***/ }),
+
 /***/ "./resources/js/helpers.js":
 /*!*********************************!*\
   !*** ./resources/js/helpers.js ***!
@@ -26833,13 +26845,14 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.component("font-awesome-icon", _forta
 /***/ }),
 
 /***/ 0:
-/*!****************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/global.scss ***!
-  \****************************************************************/
+/*!*************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/js/config/dev.env.js ./resources/sass/global.scss ***!
+  \*************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! /home/mgordillo/IdeaProjects/PHPProjects/vuebnb/resources/js/app.js */"./resources/js/app.js");
+__webpack_require__(/*! /home/mgordillo/IdeaProjects/PHPProjects/vuebnb/resources/js/config/dev.env.js */"./resources/js/config/dev.env.js");
 module.exports = __webpack_require__(/*! /home/mgordillo/IdeaProjects/PHPProjects/vuebnb/resources/sass/global.scss */"./resources/sass/global.scss");
 
 

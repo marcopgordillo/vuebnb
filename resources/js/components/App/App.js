@@ -23,9 +23,7 @@ export default {
       modalOpen: false,
       ...data
     };*/
-    return Object.assign(model, {
-        contracted: true
-    });
+    return Object.assign(model, {}); // Spread model object to more props of data()
   },
   components: {
     ModalWindow,
