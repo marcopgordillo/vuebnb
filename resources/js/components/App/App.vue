@@ -18,20 +18,16 @@
         </button>
       </div>
       <div class="lists">
-        <feature-list title="Amenities">
-          <div
-            class="list-item"
-            v-for="amenity in amenities"
-            :key="amenity.id"
-          >
+        <feature-list title="Amenities" :items="amenities">
+          <template slot-scope="amenity">
             <font-awesome-icon :icon="amenity.icon" size="lg" />
             {{ amenity.title }}
-          </div>
+          </template>
         </feature-list>
-        <feature-list title="Prices">
-          <div class="list-item" v-for="price in prices" :key="price.id">
+        <feature-list title="Prices" :items="prices">
+          <template slot-scope="price">
             {{ price.title }}: <strong>{{ price.value }}</strong>
-          </div>
+          </template>
         </feature-list>
       </div>
     </div>

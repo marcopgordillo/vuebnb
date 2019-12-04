@@ -11554,8 +11554,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['title']
+  props: ['title', 'items']
 });
 
 /***/ }),
@@ -13570,38 +13572,39 @@ var render = function() {
           "div",
           { staticClass: "lists" },
           [
-            _c(
-              "feature-list",
-              { attrs: { title: "Amenities" } },
-              _vm._l(_vm.amenities, function(amenity) {
-                return _c(
-                  "div",
-                  { key: amenity.id, staticClass: "list-item" },
-                  [
-                    _c("font-awesome-icon", {
-                      attrs: { icon: amenity.icon, size: "lg" }
-                    }),
-                    _vm._v(
-                      "\n          " + _vm._s(amenity.title) + "\n        "
-                    )
-                  ],
-                  1
-                )
-              }),
-              0
-            ),
+            _c("feature-list", {
+              attrs: { title: "Amenities", items: _vm.amenities },
+              scopedSlots: _vm._u([
+                {
+                  key: "default",
+                  fn: function(amenity) {
+                    return [
+                      _c("font-awesome-icon", {
+                        attrs: { icon: amenity.icon, size: "lg" }
+                      }),
+                      _vm._v(
+                        "\n          " + _vm._s(amenity.title) + "\n        "
+                      )
+                    ]
+                  }
+                }
+              ])
+            }),
             _vm._v(" "),
-            _c(
-              "feature-list",
-              { attrs: { title: "Prices" } },
-              _vm._l(_vm.prices, function(price) {
-                return _c("div", { key: price.id, staticClass: "list-item" }, [
-                  _vm._v("\n          " + _vm._s(price.title) + ": "),
-                  _c("strong", [_vm._v(_vm._s(price.value))])
-                ])
-              }),
-              0
-            )
+            _c("feature-list", {
+              attrs: { title: "Prices", items: _vm.prices },
+              scopedSlots: _vm._u([
+                {
+                  key: "default",
+                  fn: function(price) {
+                    return [
+                      _vm._v("\n          " + _vm._s(price.title) + ": "),
+                      _c("strong", [_vm._v(_vm._s(price.value))])
+                    ]
+                  }
+                }
+              ])
+            })
           ],
           1
         )
@@ -13647,7 +13650,19 @@ var render = function() {
         _c("strong", [_vm._v(_vm._s(_vm.title))])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "content" }, [_vm._t("default")], 2)
+      _c(
+        "div",
+        { staticClass: "content" },
+        _vm._l(_vm.items, function(item) {
+          return _c(
+            "div",
+            { staticClass: "list-item" },
+            [_vm._t("default", null, null, item)],
+            2
+          )
+        }),
+        0
+      )
     ])
   ])
 }
