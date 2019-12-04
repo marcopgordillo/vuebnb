@@ -14,7 +14,10 @@ const mix = require('laravel-mix');
 mix.js('resources/js/app.js', 'public/js')
   .sass('resources/sass/global.scss', 'public/css')
   .options({
-    extractVueStyles: 'public/css/vue-style.css'
+    extractVueStyles: 'public/css/vue-style.css',
+    postCss: [require('autoprefixer')],
+    processCssUrls: false,
+    globalVueStyles: 'resources/sass/_utils.scss'
   })
   .styles([
     'node_modules/@fortawesome/fontawesome-svg-core/styles.css',

@@ -1,14 +1,9 @@
 <template>
   <div>
-    <div class="header">
-      <div
-        class="header-img"
-        :style="headerImageStyle"
-        v-on:click="modalOpen = true"
-      >
-        <button class="view-photos">View Photos</button>
-      </div>
-    </div>
+    <header-image
+      :image-url="images[0]"
+      @header-clicked="openModal"
+    ></header-image>
     <div class="container">
       <div class="heading">
         <h1>{{ title }}</h1>
@@ -50,14 +45,9 @@
         </div>
       </div>
     </div>
-    <div id="modal" :class="{ show: modalOpen }">
-      <button v-on:click="modalOpen = false" class="modal-close">
-        <font-awesome-icon icon="times" /><span class="sr-only">Close</span>
-      </button>
-      <div class="modal-content">
-          <image-carousel :images="images"></image-carousel>
-      </div>
-    </div>
+    <modal-window ref="imagemodal">
+      <image-carousel :images="images"></image-carousel>
+    </modal-window>
   </div>
 </template>
 

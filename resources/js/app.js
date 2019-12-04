@@ -25,9 +25,9 @@ Vue.config.performance = true;
 //Vue.component('app', require('./components/App/App.vue').default);
 import "./plugins/fontawesome";
 import App from './components/App/App.vue';
-import ImageCarousel from './components/ImageCarousel/ImageCarousel.vue';
+//import ImageCarousel from './components/ImageCarousel/ImageCarousel.vue';
 
-Vue.component('image-carousel', ImageCarousel);
+//Vue.component('image-carousel', ImageCarousel);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

@@ -1,26 +1,9 @@
-.header {
-  height: 320px;
-  .header-img {
-    //background-image: url("assets/header.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 50% 50%;
-    background-color: #f5f5f5;
-    height: 100%;
-    cursor: pointer;
-    position: relative;
-    .view-photos {
-      position: absolute;
-      bottom: 20px;
-      left: 20px;
-    }
-  }
-}
 .heading {
   margin-bottom: 2em;
   h1 {
     font-size: 32px;
     font-weight: 700;
+    color: $blue;
   }
 
   p {
@@ -30,9 +13,7 @@
 }
 .about {
   margin: 2em 0;
-  h3 {
-    font-size: 22px;
-  }
+  h3 {font-size: 22px;}
   p {
     white-space: pre-wrap;
     &.contracted {
@@ -64,9 +45,7 @@ hr {
   flex-wrap: nowrap;
   margin: 2em 0;
 
-  .title {
-    flex: 1 1 25%;
-  }
+  .title {flex: 1 1 25%;}
 
   .content {
     flex: 1 1 75%;
@@ -77,58 +56,11 @@ hr {
     flex: 0 0 50%;
     margin-bottom: 16px;
   }
-  .list-item > i {
-    width: 35px;
-  }
+  .list-item > i {width: 35px;}
 
   @media (max-width: 743px) {
-    .title {
-      flex: 1 1 33%;
-    }
-
-    .content {
-      flex: 1 1 67%;
-    }
-
-    .list-item {
-      flex: 0 0 100%;
-    }
+    .title {flex: 1 1 33%;}
+    .content {flex: 1 1 67%;}
+    .list-item {flex: 0 0 100%;}
   }
-}
-
-#modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 2000;
-  background-color: rgba(0,0,0,0.85);
-  &.show {
-    display: block;
-  }
-}
-.modal-content {
-  height: 100%;
-  max-width: 105vh;
-  padding-top: 12vh;
-  margin: 0 auto;
-  position: relative;
-}
-.modal-close {
-  position: absolute;
-  right: 0;
-  top: 0;
-  padding: 0px 28px 8px;
-  font-size: 2em;
-  width: auto;
-  height: auto;
-  background: transparent;
-  border: 0;
-  outline: none;
-  color: #ffffff;
-  z-index: 1000;
-  font-weight: 100;
-  line-height: 1;
 }
