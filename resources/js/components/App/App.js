@@ -1,7 +1,11 @@
 import "core-js/features/object/assign";
 
-import headerImage from "../../../assets/images/header.jpg";
-import data from '../../data';
+import { populateAmenitiesAndPrices } from '../../helpers';
+//import headerImage from "../../../assets/images/header.jpg";
+//import data from '../../data';
+
+let model = JSON.parse(window.vuebnb_listing_model);
+model = populateAmenitiesAndPrices(model);
 
 export default {
   name: "app",
@@ -14,9 +18,9 @@ export default {
       modalOpen: false,
       ...data
     };*/
-    return Object.assign(data, {
+    return Object.assign(model, {
         headerImageStyle: {
-            "background-image": `url('${headerImage}')`
+            "background-image": `url(${model.images[0]})`
         },
         contracted: true,
         modalOpen: false

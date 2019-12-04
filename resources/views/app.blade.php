@@ -10,6 +10,9 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <script defer src="{{ asset('js/app.js') }}"></script>
+    <script type="text/javascript">
+        window.vuebnb_listing_model = "{!! addslashes(json_encode($model)) !!}"
+    </script>
 </head>
 <body>
     <div id="toolbar">

@@ -55,7 +55,7 @@
         <font-awesome-icon icon="times" /><span class="sr-only">Close</span>
       </button>
       <div class="modal-content">
-         <img src="../../../assets/images/header.jpg" />
+         <img :src="images[0]" />
       </div>
     </div>
   </div>

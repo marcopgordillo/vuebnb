@@ -11545,12 +11545,13 @@ module.exports = {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var core_js_features_object_assign__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/features/object/assign */ "./node_modules/core-js/features/object/assign.js");
 /* harmony import */ var core_js_features_object_assign__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_features_object_assign__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _assets_images_header_jpg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../assets/images/header.jpg */ "./resources/assets/images/header.jpg");
-/* harmony import */ var _assets_images_header_jpg__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_assets_images_header_jpg__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _data__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../data */ "./resources/js/data.js");
+/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../helpers */ "./resources/js/helpers.js");
 
+ //import headerImage from "../../../assets/images/header.jpg";
+//import data from '../../data';
 
-
+var model = JSON.parse(window.vuebnb_listing_model);
+model = Object(_helpers__WEBPACK_IMPORTED_MODULE_1__["populateAmenitiesAndPrices"])(model);
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "app",
   data: function data() {
@@ -11562,9 +11563,9 @@ __webpack_require__.r(__webpack_exports__);
       modalOpen: false,
       ...data
     };*/
-    return Object.assign(_data__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    return Object.assign(model, {
       headerImageStyle: {
-        "background-image": "url('".concat(_assets_images_header_jpg__WEBPACK_IMPORTED_MODULE_1___default.a, "')")
+        "background-image": "url(".concat(model.images[0], ")")
       },
       contracted: true,
       modalOpen: false
@@ -14042,7 +14043,9 @@ var render = function() {
         1
       ),
       _vm._v(" "),
-      _vm._m(2)
+      _c("div", { staticClass: "modal-content" }, [
+        _c("img", { attrs: { src: _vm.images[0] } })
+      ])
     ])
   ])
 }
@@ -14061,16 +14064,6 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "title" }, [
       _c("strong", [_vm._v("Prices")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "modal-content" }, [
-      _c("img", {
-        attrs: { src: __webpack_require__(/*! ../../../assets/images/header.jpg */ "./resources/assets/images/header.jpg") }
-      })
     ])
   }
 ]
@@ -26183,17 +26176,6 @@ module.exports = g;
 
 /***/ }),
 
-/***/ "./resources/assets/images/header.jpg":
-/*!********************************************!*\
-  !*** ./resources/assets/images/header.jpg ***!
-  \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/images/header.jpg?6047735a9d47a56e4e25c47a765b2ef0";
-
-/***/ }),
-
 /***/ "./resources/js/app.js":
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
@@ -26361,52 +26343,108 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/data.js":
-/*!******************************!*\
-  !*** ./resources/js/data.js ***!
-  \******************************/
-/*! exports provided: default */
+/***/ "./resources/js/helpers.js":
+/*!*********************************!*\
+  !*** ./resources/js/helpers.js ***!
+  \*********************************/
+/*! exports provided: populateAmenitiesAndPrices, groupByCountry */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ({
-  title: "Central Downtown Apartment with Amenities",
-  address: "No. 11, Song-Sho Road, Taipei City, Taiwan 105",
-  about: "Come and stay at this modern and comfortable apartment! My home is centrally located right in the middle" + " of the downtown. Talk about convenience! Shops, stores, and other destination areas are nearby. \r\n\r\nFeel the " + "warmth of the sun as there is plenty of natural light showers. The living room features tv, sofa, table, radio, " + "and fan. There is free wi-fi with a fast internet speed. \r\n\r\nForgot shopping for breakfast staples? We provide " + "eggs, bread, cereals, coffee, milk, tea and cookies. Enjoy cooking as my kitchen boasts full size appliances. The " + "dining table is for four people. Need to wash your clothes? There is a washer and a dryer. We provide hampers, " + "detergents, and clothing conditioner. \r\n\r\nIf you need to hit the gym, there is located at the fourth floor of " + "the building. There is indoor spa and pool.\n" + "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n" + "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n" + "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n" + "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n" + "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n",
-  amenities: [{
-    title: "Wireless Internet",
-    icon: "wifi"
-  }, {
-    title: "Pets Allowed",
-    icon: "paw"
-  }, {
-    title: "TV",
-    icon: "tv"
-  }, {
-    title: "Kitchen",
-    icon: "utensils"
-  }, {
-    title: "Breakfast",
-    icon: "coffee"
-  }, {
-    title: "Laptop friendly workspace",
-    icon: "laptop"
-  }],
-  prices: [{
-    title: "Per night",
-    value: "$89"
-  }, {
-    title: "Extra people",
-    value: "No charge"
-  }, {
-    title: "Weekly discount",
-    value: "18%"
-  }, {
-    title: "Monthly discount",
-    value: "50%"
-  }]
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "populateAmenitiesAndPrices", function() { return populateAmenitiesAndPrices; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "groupByCountry", function() { return groupByCountry; });
+var amenities = new Map();
+amenities.set('amenity_wifi', {
+  title: 'Wireless Internet',
+  icon: 'wifi'
 });
+amenities.set('amenity_pets_allowed', {
+  title: 'Pets Allowed',
+  icon: 'paw'
+});
+amenities.set('amenity_tv', {
+  title: 'TV',
+  icon: 'tv'
+});
+amenities.set('amenity_kitchen', {
+  title: 'Kitchen',
+  icon: 'utensils'
+});
+amenities.set('amenity_breakfast', {
+  title: 'Breakfast',
+  icon: 'coffee'
+});
+amenities.set('amenity_laptop', {
+  title: 'Laptop friendly workspace',
+  icon: 'laptop'
+});
+var prices = new Map();
+prices.set('price_per_night', 'Per night');
+prices.set('price_extra_people', 'Extra people');
+prices.set('price_weekly_discount', 'Weekly discount');
+prices.set('price_monthly_discount', 'Monthly discount');
+
+var populateAmenitiesAndPrices = function populateAmenitiesAndPrices(state) {
+  if (!state) return {};
+  var obj = {
+    id: state.id,
+    title: state.title,
+    address: state.address,
+    about: state.about,
+    amenities: [],
+    prices: [],
+    images: []
+  };
+
+  for (var key in state) {
+    var arr = key.split("_");
+
+    if (arr[0] === 'amenity' && state[key]) {
+      obj.amenities.push(key);
+    }
+
+    if (arr[0] === 'price') {
+      obj.prices.push({
+        title: key,
+        value: state[key]
+      });
+    }
+
+    if (arr[0] === 'image') {
+      obj.images.push(state[key]);
+    }
+  }
+
+  obj.amenities = obj.amenities.map(function (item) {
+    return amenities.get(item);
+  });
+  obj.prices = obj.prices.map(function (item) {
+    item.title = prices.get(item.title);
+    return item;
+  });
+  return obj;
+};
+
+
+
+var groupByCountry = function groupByCountry(listings) {
+  if (!listings) return {};
+  return listings.reduce(function (rv, x) {
+    var key = ['Taiwan', 'Poland', 'Cuba'].find(function (country) {
+      return x.address.indexOf(country) > -1;
+    });
+
+    if (!rv[key]) {
+      rv[key] = [];
+    }
+
+    rv[key].push(x);
+    return rv;
+  }, {});
+};
+
+
 
 /***/ }),
 
