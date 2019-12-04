@@ -2,14 +2,16 @@ import Vue from "vue";
 
 import { library, config, dom } from "@fortawesome/fontawesome-svg-core";
 import {
-    faCoffee,
-    faLaptop,
-    faPaw,
-    faPlus,
-    faTimes,
-    faTv,
-    faUtensils,
-    faWifi
+  faCoffee,
+  faLaptop,
+  faPaw,
+  faPlus,
+  faTimes,
+  faTv,
+  faUtensils,
+  faWifi,
+  faChevronLeft,
+  faChevronRight
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
@@ -17,14 +19,16 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 config.autoAddCss = false;
 
 library.add(
-    faWifi,
-    faPaw,
-    faTv,
-    faUtensils,
-    faCoffee,
-    faLaptop,
-    faPlus,
-    faTimes
+  faWifi,
+  faPaw,
+  faTv,
+  faUtensils,
+  faCoffee,
+  faLaptop,
+  faPlus,
+  faTimes,
+  faChevronLeft,
+  faChevronRight
 );
 
 Vue.component("font-awesome-icon", FontAwesomeIcon);

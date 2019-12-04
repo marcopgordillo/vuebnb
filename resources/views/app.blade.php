@@ -15,7 +15,7 @@
     </script>
 </head>
 <body>
-    <div id="toolbar">
+    <div id="toolbar" class="toolbar">
         <img class="icon" src="{{ asset('images/logo.png') }}">
         <h1>vuebnb</h1>
     </div>

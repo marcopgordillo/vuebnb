@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div>
     <div class="header">
       <div
         class="header-img"
@@ -55,7 +55,7 @@
         <font-awesome-icon icon="times" /><span class="sr-only">Close</span>
       </button>
       <div class="modal-content">
-         <img :src="images[0]" />
+          <image-carousel :images="images"></image-carousel>
       </div>
     </div>
   </div>

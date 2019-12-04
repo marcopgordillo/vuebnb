@@ -5,7 +5,6 @@
  */
 
 window.axios = require('axios');
-import "./plugins/fontawesome";
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 

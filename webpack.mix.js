@@ -13,6 +13,10 @@ const mix = require('laravel-mix');
 
 mix.js('resources/js/app.js', 'public/js')
    .sass('resources/sass/app.scss', 'public/css')
+  .styles([
+    'node_modules/@fortawesome/fontawesome-svg-core/styles.css',
+    'public/css/app.css'
+  ], 'public/css/app.css')
     .copy('resources/assets/images', 'public/images')
     .browserSync({
         proxy: process.env.APP_URL,
