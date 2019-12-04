@@ -39,13 +39,5 @@
     position: absolute;
     bottom: 20px;
     left: 20px;
-    font-size: 14px;
-    padding: 7px 18px;
-    color: #484848;
-    line-height: 1.43;
-    background: #ffffff;
-    font-weight: bold;
-    border-radius: 4px;
-    border: 1px solid #c4c4c4;
   }
 </style>

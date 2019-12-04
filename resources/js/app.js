@@ -5,10 +5,11 @@
  */
 
 require('./bootstrap');
+import Vue from 'vue';
 
-window.Vue = require('vue');
+//window.Vue = require('vue');
 
-Vue.config.performance = true;
+//Vue.config.performance = true;
 
 if (process.env.MIX_ENV_MODE === 'production') {
   Vue.config.devtools = false;
@@ -41,8 +42,5 @@ import App from './components/App/App.vue';
 
 const app = new Vue({
   el: '#app',
-  components: {
-    App
-  },
   render: h => h(App)
 });
