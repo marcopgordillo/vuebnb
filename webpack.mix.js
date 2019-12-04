@@ -12,13 +12,17 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
-   .sass('resources/sass/app.scss', 'public/css')
+  .sass('resources/sass/global.scss', 'public/css')
+  .options({
+    extractVueStyles: 'public/css/vue-style.css'
+  })
   .styles([
     'node_modules/@fortawesome/fontawesome-svg-core/styles.css',
-    'public/css/app.css'
+    'public/css/global.css',
+    'public/css/vue-style.css'
   ], 'public/css/app.css')
-    .copy('resources/assets/images', 'public/images')
-    .browserSync({
+  .copy('resources/assets/images', 'public/images')
+  .browserSync({
         proxy: process.env.APP_URL,
         open: false
     });
