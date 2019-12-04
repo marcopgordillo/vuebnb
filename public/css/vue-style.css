@@ -1,25 +1,4 @@
-img[data-v-09ba7428] {
-  max-width: 100%;
-}
-.image-carousel[data-v-09ba7428] {
-  height: 100%;
-  margin-top: -12vh;
-  position: relative;
-  display: -webkit-box;
-  display: flex;
-  -webkit-box-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-          justify-content: center;
-}
-.image-carousel .controls[data-v-09ba7428] {
-  position: absolute;
-  width: 100%;
-  display: -webkit-box;
-  display: flex;
-  -webkit-box-pack: justify;
-          justify-content: space-between;
-}#modal[data-v-27389cb0] {
+#modal[data-v-2ffcfd3c] {
   display: none;
   position: fixed;
   top: 0;
@@ -29,17 +8,17 @@ img[data-v-09ba7428] {
   z-index: 2000;
   background-color: rgba(0, 0, 0, 0.85);
 }
-#modal.show[data-v-27389cb0] {
+#modal.show[data-v-2ffcfd3c] {
   display: block;
 }
-.modal-content[data-v-27389cb0] {
+.modal-content[data-v-2ffcfd3c] {
   height: 100%;
   max-width: 105vh;
   padding-top: 12vh;
   margin: 0 auto;
   position: relative;
 }
-.modal-close[data-v-27389cb0] {
+.modal-close[data-v-2ffcfd3c] {
   position: absolute;
   right: 0;
   top: 0;
@@ -64,10 +43,31 @@ img[data-v-09ba7428] {
 .carousel-control[data-v-60a75148] {
     font-size: 3rem;
 }
-}.header[data-v-c52c845c] {
+}img[data-v-09ba7428] {
+  max-width: 100%;
+}
+.image-carousel[data-v-09ba7428] {
+  height: 100%;
+  margin-top: -12vh;
+  position: relative;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+}
+.image-carousel .controls[data-v-09ba7428] {
+  position: absolute;
+  width: 100%;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+}.header[data-v-995b6a9a] {
   height: 320px;
 }
-.header .header-img[data-v-c52c845c] {
+.header .header-img[data-v-995b6a9a] {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
@@ -76,7 +76,7 @@ img[data-v-09ba7428] {
   cursor: pointer;
   position: relative;
 }
-button[data-v-c52c845c] {
+button[data-v-995b6a9a] {
   position: absolute;
   bottom: 20px;
   left: 20px;
@@ -88,6 +88,48 @@ button[data-v-c52c845c] {
   font-weight: bold;
   border-radius: 4px;
   border: 1px solid #c4c4c4;
+}hr {
+  border: 0;
+  border-top: 1px solid #dce0e0;
+}
+.list {
+  display: -webkit-box;
+  display: flex;
+  flex-wrap: nowrap;
+  margin: 2em 0;
+}
+.list .title {
+  -webkit-box-flex: 1;
+          flex: 1 1 25%;
+}
+.list .content {
+  -webkit-box-flex: 1;
+          flex: 1 1 75%;
+  display: -webkit-box;
+  display: flex;
+  flex-wrap: wrap;
+}
+.list .list-item {
+  -webkit-box-flex: 0;
+          flex: 0 0 50%;
+  margin-bottom: 16px;
+}
+.list .list-item > i {
+  width: 35px;
+}
+@media (max-width: 743px) {
+.list .title {
+    -webkit-box-flex: 1;
+            flex: 1 1 33%;
+}
+.list .content {
+    -webkit-box-flex: 1;
+            flex: 1 1 67%;
+}
+.list .list-item {
+    -webkit-box-flex: 0;
+            flex: 0 0 100%;
+}
 }.heading[data-v-467448f8] {
   margin-bottom: 2em;
 }
@@ -124,47 +166,4 @@ button[data-v-c52c845c] {
 .about button.more[data-v-467448f8]:hover, .about button.more[data-v-467448f8]:focus, .about button.more[data-v-467448f8]:active {
   text-decoration: underline;
   outline: none;
-}
-hr[data-v-467448f8] {
-  border: 0;
-  border-top: 1px solid #dce0e0;
-}
-.list[data-v-467448f8] {
-  display: -webkit-box;
-  display: flex;
-  flex-wrap: nowrap;
-  margin: 2em 0;
-}
-.list .title[data-v-467448f8] {
-  -webkit-box-flex: 1;
-          flex: 1 1 25%;
-}
-.list .content[data-v-467448f8] {
-  -webkit-box-flex: 1;
-          flex: 1 1 75%;
-  display: -webkit-box;
-  display: flex;
-  flex-wrap: wrap;
-}
-.list .list-item[data-v-467448f8] {
-  -webkit-box-flex: 0;
-          flex: 0 0 50%;
-  margin-bottom: 16px;
-}
-.list .list-item > i[data-v-467448f8] {
-  width: 35px;
-}
-@media (max-width: 743px) {
-.list .title[data-v-467448f8] {
-    -webkit-box-flex: 1;
-            flex: 1 1 33%;
-}
-.list .content[data-v-467448f8] {
-    -webkit-box-flex: 1;
-            flex: 1 1 67%;
-}
-.list .list-item[data-v-467448f8] {
-    -webkit-box-flex: 0;
-            flex: 0 0 100%;
-}
 }

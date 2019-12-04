@@ -1,9 +1,10 @@
 import "core-js/features/object/assign";
 
 import { populateAmenitiesAndPrices } from '../../helpers';
-import ModalWindow from '../ModalWindow/ModalWindow.vue';
+import ModalWindow from '../ModalWindow.vue';
 import ImageCarousel from '../ImageCarousel/ImageCarousel.vue';
-import HeaderImage from '../HeaderImage/HeaderImage.vue';
+import HeaderImage from '../HeaderImage.vue';
+import FeatureList from '../FeatureList'
 //import headerImage from "../../../assets/images/header.jpg";
 //import data from '../../data';
 
@@ -26,7 +27,7 @@ export default {
     });
   },
   components: {
-    ModalWindow, ImageCarousel, HeaderImage
+    ModalWindow, ImageCarousel, HeaderImage, FeatureList
   },
   methods: {
     openModal() {
