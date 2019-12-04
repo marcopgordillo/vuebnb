@@ -1,0 +1,161 @@
+button {
+  border-radius: 4px;
+  border: 1px solid #c4c4c4;
+  text-align: center;
+  vertical-align: middle;
+  font-weight: bold;
+  line-height: 1.43;
+  user-select: none;
+  white-space: nowrap;
+  cursor: pointer;
+  background: white;
+  color: #484848;
+  padding: 7px 18px;
+  font-size: 14px;
+  display: inline-block;
+  margin-bottom: 0;
+}
+.header {
+  height: 320px;
+  .header-img {
+    //background-image: url("assets/header.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-color: #f5f5f5;
+    height: 100%;
+    cursor: pointer;
+    position: relative;
+    .view-photos {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+    }
+  }
+}
+.container {
+  margin: 0 auto;
+  padding: 0 12px;
+  @media (min-width: 744px) {
+    width: 696px;
+  }
+}
+.heading {
+  margin-bottom: 2em;
+  h1 {
+    font-size: 32px;
+    font-weight: 700;
+  }
+
+  p {
+    font-size: 15px;
+    color: #767676;
+  }
+}
+.about {
+  margin: 2em 0;
+  h3 {
+    font-size: 22px;
+  }
+  p {
+    white-space: pre-wrap;
+    &.contracted {
+      height: 250px;
+      overflow: hidden;
+    }
+  }
+  button.more {
+    background: transparent;
+    border: 0;
+    color: #008489;
+    padding: 0;
+    font-size: 17px;
+    font-weight: bold;
+    &:hover,
+    &:focus,
+    &:active {
+      text-decoration: underline;
+      outline: none;
+    }
+  }
+}
+hr {
+  border: 0;
+  border-top: 1px solid #dce0e0;
+}
+.list {
+  display: flex;
+  flex-wrap: nowrap;
+  margin: 2em 0;
+
+  .title {
+    flex: 1 1 25%;
+  }
+
+  .content {
+    flex: 1 1 75%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .list-item {
+    flex: 0 0 50%;
+    margin-bottom: 16px;
+  }
+  .list-item > i {
+    width: 35px;
+  }
+
+  @media (max-width: 743px) {
+    .title {
+      flex: 1 1 33%;
+    }
+
+    .content {
+      flex: 1 1 67%;
+    }
+
+    .list-item {
+      flex: 0 0 100%;
+    }
+  }
+}
+
+#modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2000;
+  background-color: rgba(0,0,0,0.85);
+  &.show {
+    display: block;
+  }
+}
+.modal-content {
+  height: 100%;
+  max-width: 105vh;
+  padding-top: 12vh;
+  margin: 0 auto;
+  position: relative;
+  img {
+    max-width: 100%;
+  }
+}
+.modal-close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 0px 28px 8px;
+  font-size: 2em;
+  width: auto;
+  height: auto;
+  background: transparent;
+  border: 0;
+  outline: none;
+  color: #ffffff;
+  z-index: 1000;
+  font-weight: 100;
+  line-height: 1;
+}

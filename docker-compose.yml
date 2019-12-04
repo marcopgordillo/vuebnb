@@ -10,9 +10,9 @@ services:
      restart: always
      environment:
        MYSQL_ROOT_PASSWORD: wordpress123
-       MYSQL_DATABASE: wordpress
-       MYSQL_USER: wordpress
-       MYSQL_PASSWORD: wordpress
+       MYSQL_DATABASE: vuebnb
+       MYSQL_USER: vuebnb
+       MYSQL_PASSWORD: vuebnb
 
    apache:
      depends_on:
