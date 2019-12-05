@@ -19,13 +19,20 @@
   import { groupByCountry } from '../helpers';
 
   import ListingSummary from './ListingSummary.vue';
+  import routeMixin from '../route-mixin';
 
-  const serverData = JSON.parse(window.vuebnb_listing_data);
+  const serverData = JSON.parse(window.vuebnb_server_data);
   const listing_groups = groupByCountry(serverData.listings);
 
   export default {
+    mixins: [ routeMixin ],
     data() {
-      return { listing_groups }
+      return { listing_groups: [] }
+    },
+    methods: {
+      assignData({ listings }) {
+        this.listing_groups = groupByCountry(listings);
+      },
     },
     components: {
       ListingSummary

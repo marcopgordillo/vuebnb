@@ -11661,6 +11661,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helpers */ "./resources/js/helpers.js");
 /* harmony import */ var _ListingSummary_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ListingSummary.vue */ "./resources/js/components/ListingSummary.vue");
+/* harmony import */ var _route_mixin__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../route-mixin */ "./resources/js/route-mixin.js");
 //
 //
 //
@@ -11680,13 +11681,21 @@ __webpack_require__.r(__webpack_exports__);
 //
 
 
-var serverData = JSON.parse(window.vuebnb_listing_data);
+
+var serverData = JSON.parse(window.vuebnb_server_data);
 var listing_groups = Object(_helpers__WEBPACK_IMPORTED_MODULE_0__["groupByCountry"])(serverData.listings);
 /* harmony default export */ __webpack_exports__["default"] = ({
+  mixins: [_route_mixin__WEBPACK_IMPORTED_MODULE_2__["default"]],
   data: function data() {
     return {
-      listing_groups: listing_groups
+      listing_groups: []
     };
+  },
+  methods: {
+    assignData: function assignData(_ref) {
+      var listings = _ref.listings;
+      this.listing_groups = Object(_helpers__WEBPACK_IMPORTED_MODULE_0__["groupByCountry"])(listings);
+    }
   },
   components: {
     ListingSummary: _ListingSummary_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
@@ -11734,6 +11743,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
 //
 //
 //
@@ -11881,6 +11892,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _HeaderImage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../HeaderImage */ "./resources/js/components/HeaderImage.vue");
 /* harmony import */ var _FeatureList__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../FeatureList */ "./resources/js/components/FeatureList.vue");
 /* harmony import */ var _ExpandableText__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../ExpandableText */ "./resources/js/components/ExpandableText.vue");
+/* harmony import */ var _route_mixin__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../route-mixin */ "./resources/js/route-mixin.js");
+
 
 
 
@@ -11890,11 +11903,20 @@ __webpack_require__.r(__webpack_exports__);
  //import headerImage from "../../../assets/images/header.jpg";
 //import data from '../../data';
 
-var serverData = JSON.parse(window.vuebnb_listing_data);
+var serverData = JSON.parse(window.vuebnb_server_data);
 var model = Object(_helpers__WEBPACK_IMPORTED_MODULE_1__["populateAmenitiesAndPrices"])(serverData.listing);
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "listing-page",
+  mixins: [_route_mixin__WEBPACK_IMPORTED_MODULE_7__["default"]],
   data: function data() {
+    return {
+      title: null,
+      about: null,
+      address: null,
+      amenities: [],
+      prices: [],
+      images: []
+    };
     /*return {
       headerImageStyle: {
         "background-image": `url('${headerImage}')`
@@ -11902,8 +11924,8 @@ var model = Object(_helpers__WEBPACK_IMPORTED_MODULE_1__["populateAmenitiesAndPr
       contracted: true,
       modalOpen: false,
       ...data
-    };*/
-    return Object.assign(model, {}); // Spread model object to more props of data()
+    };
+    return Object.assign(model, {}); // Spread model object to more props of data()*/
   },
   components: {
     ModalWindow: _ModalWindow__WEBPACK_IMPORTED_MODULE_2__["default"],
@@ -11913,6 +11935,10 @@ var model = Object(_helpers__WEBPACK_IMPORTED_MODULE_1__["populateAmenitiesAndPr
     ExpandableText: _ExpandableText__WEBPACK_IMPORTED_MODULE_6__["default"]
   },
   methods: {
+    assignData: function assignData(_ref) {
+      var listing = _ref.listing;
+      Object.assign(this.$data, Object(_helpers__WEBPACK_IMPORTED_MODULE_1__["populateAmenitiesAndPrices"])(listing));
+    },
     openModal: function openModal() {
       this.$refs.imagemodal.modalOpen = true;
     }
@@ -13994,10 +14020,12 @@ var render = function() {
   return _c(
     "div",
     [
-      _c("header-image", {
-        attrs: { "image-url": _vm.images[0] },
-        on: { "header-clicked": _vm.openModal }
-      }),
+      _vm.images[0]
+        ? _c("header-image", {
+            attrs: { "image-url": _vm.images[0] },
+            on: { "header-clicked": _vm.openModal }
+          })
+        : _vm._e(),
       _vm._v(" "),
       _c("div", { staticClass: "container" }, [
         _c("div", { staticClass: "heading" }, [
@@ -14093,21 +14121,39 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "listing-summary" }, [
-    _c("div", { staticClass: "wrapper" }, [
-      _c("div", { staticClass: "thumbnail", style: _vm.backgroundImageStyle }),
-      _vm._v(" "),
-      _c("div", { staticClass: "info title" }, [
-        _c("span", [_vm._v(_vm._s(_vm.listing.price_per_night))]),
-        _vm._v(" "),
-        _c("span", [_vm._v(_vm._s(_vm.listing.title))])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "info address" }, [
-        _vm._v(_vm._s(_vm.listing.address))
-      ])
-    ])
-  ])
+  return _c(
+    "div",
+    { staticClass: "listing-summary" },
+    [
+      _c(
+        "router-link",
+        {
+          attrs: {
+            to: { name: "listing", params: { listing: _vm.listing.id } }
+          }
+        },
+        [
+          _c("div", { staticClass: "wrapper" }, [
+            _c("div", {
+              staticClass: "thumbnail",
+              style: _vm.backgroundImageStyle
+            }),
+            _vm._v(" "),
+            _c("div", { staticClass: "info title" }, [
+              _c("span", [_vm._v(_vm._s(_vm.listing.price_per_night))]),
+              _vm._v(" "),
+              _c("span", [_vm._v(_vm._s(_vm.listing.title))])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "info address" }, [
+              _vm._v(_vm._s(_vm.listing.address))
+            ])
+          ])
+        ]
+      )
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -26722,6 +26768,46 @@ vue__WEBPACK_IMPORTED_MODULE_0__["default"].component("font-awesome-icon", _fort
 
 /***/ }),
 
+/***/ "./resources/js/route-mixin.js":
+/*!*************************************!*\
+  !*** ./resources/js/route-mixin.js ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+
+
+function getData(to) {
+  return new Promise(function (resolve) {
+    var serverData = JSON.parse(window.vuebnb_server_data);
+
+    if (!serverData.path || to.path !== serverData.path) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api".concat(to.path)).then(function (_ref) {
+        var data = _ref.data;
+        resolve(data);
+      });
+    } else {
+      resolve(serverData);
+    }
+  });
+}
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  beforeRouteEnter: function beforeRouteEnter(to, from, next) {
+    getData(to).then(function (data) {
+      next(function (component) {
+        return component.assignData(data);
+      });
+    });
+  }
+});
+
+/***/ }),
+
 /***/ "./resources/js/router.js":
 /*!********************************!*\
   !*** ./resources/js/router.js ***!
@@ -26750,7 +26836,13 @@ vue__WEBPACK_IMPORTED_MODULE_0__["default"].use(vue_router__WEBPACK_IMPORTED_MOD
     path: '/listing/:listing',
     component: _components_ListingPage_ListingPage_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
     name: 'listing'
-  }]
+  }],
+  scrollBehavior: function scrollBehavior(to, from, savedPosition) {
+    return {
+      x: 0,
+      y: 0
+    };
+  }
 }));
 
 /***/ }),
