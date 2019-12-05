@@ -11,8 +11,10 @@ import {
   faUtensils,
   faWifi,
   faChevronLeft,
-  faChevronRight
+  faChevronRight,
+  faHeart as fasHeart
 } from "@fortawesome/free-solid-svg-icons";
+import { faHeart as farHeart } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
 // Make sure you tell Font Awesome to skip auto-inserting CSS into the <head>
@@ -28,7 +30,9 @@ library.add(
   faPlus,
   faTimes,
   faChevronLeft,
-  faChevronRight
+  faChevronRight,
+  fasHeart,
+  farHeart
 );
 
 Vue.component("font-awesome-icon", FontAwesomeIcon);

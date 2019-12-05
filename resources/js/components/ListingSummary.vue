@@ -10,11 +10,16 @@
         <div class="info address">{{ listing.address }}</div>
       </div>
     </router-link>
+    <listing-save :id="listing.id"></listing-save>
   </div>
 </template>
 <script>
+  import ListingSave from './ListingSave.vue';
   export default {
     props: [ 'listing' ],
+    components: {
+      ListingSave
+    },
     computed: {
       backgroundImageStyle() {
         return {
@@ -26,6 +31,7 @@
 </script>
 <style lang="scss" scoped>
   .listing-summary {
+    position: relative;
     flex: 0 0 auto;
     a {
       text-decoration: none;
@@ -56,6 +62,12 @@
       &.address {
         font-size: 14px;
         line-height: 18px;
+      }
+    }
+    @media (max-width: 400px) {
+      .listing-save {
+        left: 15px;
+        right: auto;
       }
     }
   }

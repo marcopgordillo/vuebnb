@@ -4,6 +4,7 @@
       v-if="images[0]"
       :image-url="images[0]"
       @header-clicked="openModal"
+      :id="id"
     ></header-image>
     <div class="listing-container">
       <div class="heading">

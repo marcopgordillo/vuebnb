@@ -26,6 +26,7 @@ import Vue from 'vue';
 import "./plugins/fontawesome";
 import App from './components/App.vue';
 import router from './router';
+import store from './store';
 
 //import ImageCarousel from './components/ImageCarousel/ImageCarousel.vue';
 //Vue.component('image-carousel', ImageCarousel);
@@ -38,5 +39,6 @@ import router from './router';
 const app = new Vue({
   el: '#app',
   render: h => h(App),
-  router
+  router,
+  store
 });

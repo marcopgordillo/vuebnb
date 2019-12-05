@@ -18,6 +18,7 @@ export default {
   mixins: [ routeMixin ],
   data() {
     return {
+      id: null,
       title: null,
       about: null,
       address: null,
