@@ -1,4 +1,4 @@
-import CarouselControl from "./CarouselControl/CarouselControl";
+import CarouselControl from "../CarouselControl";
 
 export default {
   name: "image-carousel",
