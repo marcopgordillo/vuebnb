@@ -5,6 +5,7 @@ import axios from 'axios';
 import ListingPage from "./components/ListingPage/ListingPage.vue";
 import HomePage from "./components/HomePage";
 import SavedPage from "./components/SavedPage";
+import LoginPage from './components/LoginPage';
 import store from './store';
 
 Vue.use(VueRouter);
@@ -14,6 +15,7 @@ const router = new VueRouter({
   routes: [
     { path: '/', component: HomePage, name: 'home' },
     { path: '/saved', component: SavedPage, name: 'saved' },
+    { path: '/login', component: LoginPage, name: 'login' },
     { path: '/listing/:listing', component: ListingPage, name: 'listing' }
   ],
   scrollBehavior (to, from, savedPosition) {
@@ -27,6 +29,7 @@ router.beforeEach((to, from, next) => {
     to.name === 'listing'
       ? store.getters.getListing(to.params.listing)
       : store.state.listing_summaries.length > 0
+    || to.name === 'login'
   ) {
     next();
   }
