@@ -1,10 +1,10 @@
 <template>
   <div class="listing-save" @click.stop="toggleSaved()">
     <button v-if="button">
-      <font-awesome-icon class="heart" size="lg" :icon="[family, 'heart']" />
+      <font-awesome-icon :class="'heart ' + classes" size="lg" :icon="[family, 'heart']" />
       {{ message }}
     </button>
-    <font-awesome-icon v-else class="heart" size="lg" :icon="[family, 'heart']" />
+    <font-awesome-icon :class="'heart ' + classes" v-else class="heart" size="lg" :icon="[family, 'heart']" />
   </div>
 </template>
 <script>
@@ -22,6 +22,9 @@
       family() {
         return this.isListingSaved ? 'fas' : 'far';
       },
+      classes() {
+        return this.isListingSaved ? 'heart-red' : 'heart-white';
+      },
       message() {
         return this.isListingSaved ? 'Saved' : 'Save';
       }
@@ -35,13 +38,19 @@
     right: 20px;
     cursor: pointer;
     > .heart {
-      color: #fff;
       padding-right: 4px;
-      filter: drop-shadow(0 0 1px #777);
     }
     button .heart {
       color: #808080;
       padding-right: 4px;
     }
+  }
+  .heart-white {
+    color: #fff;
+    filter: drop-shadow(0 0 1px #777);
+  }
+  .heart-red {
+    color: #ff5a5f;
+    filter: drop-shadow(0 0 1px #fff);
   }
 </style>
