@@ -40,13 +40,6 @@
   }
 </script>
 <style lang="scss" scoped>
-  .home-container {
-    margin: 0 auto;
-    padding: 0 25px;
-    @media (min-width: 1131px) {
-      width: 1080px;
-    }
-  }
   .listing-summary-group {
     padding-bottom: 20px;
   }
