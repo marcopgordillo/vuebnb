@@ -28866,6 +28866,9 @@ router.beforeEach(function (to, from, next) {
       route: to.name,
       data: serverData
     });
+    serverData.saved.forEach(function (id) {
+      return _store__WEBPACK_IMPORTED_MODULE_7__["default"].commit('toggleSaved', id);
+    });
     next();
   }
 });
@@ -28891,7 +28894,7 @@ __webpack_require__.r(__webpack_exports__);
 vue__WEBPACK_IMPORTED_MODULE_0__["default"].use(vuex__WEBPACK_IMPORTED_MODULE_1__["default"]);
 /* harmony default export */ __webpack_exports__["default"] = (new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
   state: {
-    saved: [1, 15],
+    saved: [],
     listing_summaries: [],
     listings: [],
     auth: false
