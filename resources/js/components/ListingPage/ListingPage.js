@@ -9,11 +9,11 @@ import ExpandableText from '../ExpandableText';
 //import headerImage from "../../../assets/images/header.jpg";
 //import data from '../../data';
 
-let model = JSON.parse(window.vuebnb_listing_model);
-model = populateAmenitiesAndPrices(model);
+const serverData = JSON.parse(window.vuebnb_listing_data);
+const model = populateAmenitiesAndPrices(serverData.listing);
 
 export default {
-  name: "app",
+  name: "listing-page",
   data() {
     /*return {
       headerImageStyle: {

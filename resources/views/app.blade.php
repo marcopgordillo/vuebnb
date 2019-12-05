@@ -11,16 +11,12 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <script defer src="{{ asset('js/app.js') }}"></script>
     <script type="text/javascript">
-        window.vuebnb_listing_model = "{!! addslashes(json_encode($model)) !!}"
+        window.vuebnb_listing_data = "{!! addslashes(json_encode($data)) !!}"
     </script>
 </head>
 <body>
-    <div id="toolbar" class="toolbar">
-        <img class="icon" src="{{ asset('images/logo.png') }}">
-        <h1>vuebnb</h1>
-    </div>
     <noscript>
-        <strong>We're sorry but vuebnb-prototype doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+        <strong>We're sorry but vuebnb doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
     <div id="app"></div>
 <!-- built files will be auto injected -->

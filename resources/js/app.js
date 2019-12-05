@@ -11,12 +11,6 @@ import Vue from 'vue';
 
 //Vue.config.performance = true;
 
-if (process.env.MIX_ENV_MODE === 'production') {
-  Vue.config.devtools = false;
-  Vue.config.debug = false;
-  Vue.config.silent = true;
-}
-
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -30,9 +24,10 @@ if (process.env.MIX_ENV_MODE === 'production') {
 
 //Vue.component('app', require('./components/App/App.vue').default);
 import "./plugins/fontawesome";
-import App from './components/App/App.vue';
-//import ImageCarousel from './components/ImageCarousel/ImageCarousel.vue';
+import App from './components/App.vue';
+import router from './router';
 
+//import ImageCarousel from './components/ImageCarousel/ImageCarousel.vue';
 //Vue.component('image-carousel', ImageCarousel);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -42,5 +37,6 @@ import App from './components/App/App.vue';
 
 const app = new Vue({
   el: '#app',
-  render: h => h(App)
+  render: h => h(App),
+  router
 });

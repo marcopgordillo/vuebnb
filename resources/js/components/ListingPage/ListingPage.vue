@@ -34,5 +34,5 @@
   </div>
 </template>
 
-<script src="./App.js"></script>
-<style src="./App.scss" lang="scss" scoped></style>
+<script src="./ListingPage.js"></script>
+<style src="./ListingPage.scss" lang="scss" scoped></style>
