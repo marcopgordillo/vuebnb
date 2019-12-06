@@ -21,6 +21,7 @@
         "fibers": "^4.0.2",
         "ftp": "^0.3.10",
         "laravel-mix": "^4.0.7",
+        "laravel-mix-purgecss": "^4.2.0",
         "popper.js": "^1.12",
         "recursive-readdir": "^2.2.2",
         "resolve-url-loader": "^2.3.1",

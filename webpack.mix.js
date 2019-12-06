@@ -1,4 +1,5 @@
 const mix = require('laravel-mix');
+require('laravel-mix-purgecss');
 
 /*
  |--------------------------------------------------------------------------
@@ -31,6 +32,10 @@ mix.webpackConfig({
     'public/css/global.css',
     'public/css/vue-style.css'
   ], 'public/css/app.css')
+  .purgeCss({
+    whitelist: ['hide', 'show'],
+    whitelistPatterns: [/language/, /hljs/],
+  })
   .copy('resources/assets/images', 'public/images')
   .browserSync({
         proxy: process.env.APP_URL,
