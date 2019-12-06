@@ -1,1 +1,81 @@
-body,html{overflow-x:hidden}body{font-family:Open Sans,sans-serif;color:#484848;font-size:17px;margin:0}body.modal-open{overflow:hidden;position:fixed}button{border-radius:4px;border:1px solid #c4c4c4;text-align:center;vertical-align:middle;font-weight:700;line-height:1.43;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;white-space:nowrap;cursor:pointer;background:#fff;color:#484848;padding:7px 18px;font-size:14px;display:inline-block;margin-bottom:0}.listing-container{margin:0 auto;padding:0 12px}@media (min-width:744px){.listing-container{width:696px}}.home-container{margin:0 auto;padding:0 25px}@media (min-width:1131px){.home-container{width:1080px}}.saved-container{margin:0 auto;padding:0 25px}@media (min-width:1131px){.saved-container{width:1095px;padding-left:40px;margin-bottom:-10px}}.login-container{margin:0 auto;padding:0 12px}@media (min-width:374px){.login-container{width:350px}}input[type=text]{-webkit-appearance:none}
+html, body {
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #484848;
+  font-size: 17px;
+  margin: 0;
+}
+body.modal-open {
+  overflow: hidden;
+  position: fixed;
+}
+
+button {
+  border-radius: 4px;
+  border: 1px solid #c4c4c4;
+  text-align: center;
+  vertical-align: middle;
+  font-weight: bold;
+  line-height: 1.43;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  white-space: nowrap;
+  cursor: pointer;
+  background: white;
+  color: #484848;
+  padding: 7px 18px;
+  font-size: 14px;
+  display: inline-block;
+  margin-bottom: 0;
+}
+
+.listing-container {
+  margin: 0 auto;
+  padding: 0 12px;
+}
+@media (min-width: 744px) {
+  .listing-container {
+    width: 696px;
+  }
+}
+
+.home-container {
+  margin: 0 auto;
+  padding: 0 25px;
+}
+@media (min-width: 1131px) {
+  .home-container {
+    width: 1080px;
+  }
+}
+
+.saved-container {
+  margin: 0 auto;
+  padding: 0 25px;
+}
+@media (min-width: 1131px) {
+  .saved-container {
+    width: 1095px;
+    padding-left: 40px;
+    margin-bottom: -10px;
+  }
+}
+
+.login-container {
+  margin: 0 auto;
+  padding: 0 12px;
+}
+@media (min-width: 374px) {
+  .login-container {
+    width: 350px;
+  }
+}
+
+input[type=text] {
+  -webkit-appearance: none;
+}

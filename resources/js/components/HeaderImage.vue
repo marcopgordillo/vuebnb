@@ -31,7 +31,6 @@
   .header {
     height: 320px;
     .header-img {
-      //background-image: url("assets/header.jpg");
       background-repeat: no-repeat;
       background-size: cover;
       background-position: 50% 50%;
