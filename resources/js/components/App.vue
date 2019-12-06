@@ -49,7 +49,6 @@
     },
     computed: {
       logoUrl() {
-        console.log(window.cdn_url);
         return `${window.cdn_url || ''}images/logo.png`;
       }
     }
