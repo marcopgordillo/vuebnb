@@ -64,6 +64,7 @@
       ],
       "post-install-cmd": [
         "Illuminate\\Foundation\\ComposerScripts::postInstall",
+        "@php artisan passport:install",
         "@php artisan passport:keys"
       ]
     }
