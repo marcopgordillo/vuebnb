@@ -2,7 +2,7 @@
   <div>
     <div id="toolbar" class="toolbar">
       <router-link :to="{ name: 'home' }">
-        <img class="icon" src="/images/logo.png">
+        <img class="icon" :src="logoUrl">
         <h1>vuebnb</h1>
       </router-link>
       <ul class="links">
@@ -45,6 +45,11 @@
     methods: {
       logout() {
         document.getElementById('logout').submit();
+      }
+    },
+    computed: {
+      logoUrl() {
+        return `${window.cdn_url || ''}images/logo.png`;
       }
     }
   }

@@ -3,7 +3,7 @@
     <hr />
     <div :class="containerClass">
       <p>
-        <img class="icon" src="/images/logo.png">
+        <img class="icon" :src="logoUrl">
         <span>
           <strong>Vuebnb</strong>. A full-stack Vue.js and Laravel demo
           app
@@ -18,6 +18,9 @@
       containerClass() {
         // this.$route.name is either 'home' or 'listing'
         return `${this.$route.name}-container`;
+      },
+      logoUrl() {
+        return `${window.cdn_url || ''}images/logo.png`;
       }
     }
   }
