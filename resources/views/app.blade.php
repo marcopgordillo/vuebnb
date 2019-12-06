@@ -7,7 +7,6 @@
     <link rel="icon" href="/favicon.ico">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Vue bnb</title>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ cdn('css/app.css') }}">
     <script defer src="{{ cdn('js/app.js') }}"></script>
     <script type="text/javascript">

@@ -6,7 +6,7 @@
 
 require('./bootstrap');
 import Vue from 'vue';
-
+import "typeface-open-sans";
 //window.Vue = require('vue');
 
 //Vue.config.performance = true;
